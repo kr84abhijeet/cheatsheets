@@ -1,0 +1,288 @@
+For quick reference, you can refer this curated list of ready-to-use data structures and methods.
+1) ArrayList:
+ArrayList<Integer> al = new ArrayList<>();
+1. al.add(5);
+The run time of this method is O(1).
+2. al.get(index);
+The run time of this method is O(1).
+3. al.size();
+The run time of this method is O(1).
+al.add(5); //adds 5 at the last position
+al.add(10); //adds 10 at the last position
+al.add(20); //adds 20 at the last position
+System.out.println(al.get(0)); //Prints 5 on new line
+System.out.println(al.size()); //Prints the size i.e. 3 on new line
+2) HashMap:
+It is Hash table based implementation of the Map interface. This implementation provides all of
+the optional map operations, and permits null values and the null key. (The HashMap
+class is roughly equivalent to Hashtable, except that it is unsynchronized and permits
+nulls.) This class makes no guarantees as to the order of the map; in particular, it does
+not guarantee that the order will remain constant over time.
+HashMap<Character, Integer> hm = new HashMap<>();
+1. hm.put(key, value);
+Puts the value of particular key in the hashmap. Overwrite previous value if already present.
+Operation done in O(1) time.
+2. hm.get(key);
+Returns the value of particular key in O(1) time.
+3. hm.containsKey(key);
+Returns true if this map contains a mapping for the specified key. The run time is O(1).
+4. hm.isEmpty();
+Returns true if this map contains no key-value mappings.
+hm.put(‘a’, 1); //Puts value 1 for character ‘a’.
+2
+hm.put(‘b’, 3); //Puts value 3 for character ‘b’.
+System.out.println(hm.get(‘b’)); //Prints value for ‘b’ i.e. 3 on new line
+System.out.println(hm.containsKey(‘a’)); //Prints true
+System.out.println(hm.isEmpty()); //Prints false
+3) HashSet:
+This class implements the Set interface, backed by a hash table (actually a HashMap instance).
+It makes no guarantees as to the iteration order of the set; in particular, it does not
+guarantee that the order will remain constant over time. This class permits the null
+element.
+HashSet<Integer> hs = new HashSet<>();
+1. hs.add(3);
+Adds the specified element to this set if it is not already present. Done in O(1) time.
+2. hs.contains(1);
+Returns true if this set contains the specified element. Run time is O(1).
+3. hs.size();
+Returns the number of elements in this set (its cardinality). Run time is O(1).
+4. hs.isEmpty();
+Returns true if this set contains no elements.
+hs.add(1); //Adds 1 to the hashset
+hs.add(2); //Adds 2 to the hashset
+System.out.println(hs.contains(1)); //Prints true on the new line.
+System.out.println(hs.size()); //Prints 2 on the new line.
+System.out.println(hs.isEmpty()); //Prints false on new line.
+4) TreeMap
+A Red-Black tree based NavigableMap implementation. The map is sorted according to the
+natural ordering of its keys, or by a Comparator provided at map creation time,
+depending on which constructor is used.
+This implementation provides guaranteed log(n) time cost for the containsKey, get, put and
+remove operations.
+TreeMap<Integer, Integer> tm = new TreeMap<>()
+
+Language tools for CPP
+
+For quick reference, you can refer this curated list of ready-to-use data structures and methods.
+Vector
+The most commonly used methods of vector are:
+1. push_back()
+The run time of this method is O(1)
+2. [] (bracket operators)
+The run time of this method is O(1)
+3. size()
+The run time of this method is O(1)
+vector<int> v; // v = {}
+cout<< v.size() <<endl; // outputs 0
+v.push_back(20); // v = {20}
+v.push_back(10); // v = {20, 10}
+v.push_back(30); // v = {20, 10, 30}
+cout << v[1] << endl; // outputs 10 (since, vector is zero-indexed)
+cout << v.size() << endl; // outputs 3
+Set
+Set stores its elements in sorted order and doesn’t contain duplicate values.
+The most commonly used methods of set are:
+1. insert()
+The run time of this method is O(log n)
+2. find()
+The run time of this method is O(log n)
+3. size()
+The run time of this method is O(1)
+set<int> s; // s = {}
+cout<< s.size() <<endl; // outputs 0
+s.insert(20); // s = {20}
+s.insert(10); // s = {10, 20}
+s.insert(10); // s = {10, 20}
+auto it = s.find(10); // it is an iterator that points to 10
+cout << (it != s.end()? “FOUND” : “”) << endl; // outputs FOUND
+cout << s.size() << endl; // outputs 2
+Unordered_Set
+2
+Unordered_Set is same as set and has the same most common methods. The only difference is
+run time complexity.
+The most commonly used methods of set are:
+1. insert()
+The run time of this method is O(1)
+2. find()
+The run time of this method is O(1)
+3. size()
+The run time of this method is O(1)
+The unordered_set() achieves this complexity because it does not keep it in sorted order.
+unordered_set<int> s; // s = {}
+cout<< s.size() <<endl; // outputs 0
+s.insert(20); // s = {20}
+s.insert(10); // s = {10, 20}
+s.insert(10); // s = {10, 20}
+auto it = s.find(10); // it is an iterator that points to 10
+cout << (it != s.end()? “FOUND” : “”) << endl; // outputs FOUND
+cout << s.size() << endl; // outputs 2
+Map
+Map is very similar to set, but instead of storing an element or a value, it stores a key and a
+value. The commonly used methods are:
+1. insert()
+The run time of this method is O(log n), insertion in map is done using make_pair
+2. find()
+The run time of this method is O(log n), it returns pair of key and value to us.
+3. size()
+The run time of this method is O(1)
+4. [] bracket operators
+The run time of this method is O(log n), if the key exists, then it returns reference to the
+value. If the key doesn’t exist, then it will do an insertion in the map
+map<int, int> m; // m = {}
+cout<< m.size() << endl; // outputs 0
+m.insert(make_pair(20, 1)); // m = {(20, 1)}
+m.insert(make_pair(10,1)); // m = {(10, 1), (20, 1)}
+m[10]++; // m = {(10, 2), (20, 1)}
+auto it = m.find(10); // it is an iterator that points to
+(10, 2)
+cout << (it != m.end() ? it -> second: 0)) << endl;// outputs 2
+3
+auto it2 = m.find(20); // it is an iterator that points to
+(20, 1)
+cout << (it2 != m.end() ? it2 -> first: 0)) << endl;//outputs 20
+cout<< m.size() << endl; //outputs 2
+Unordered_Map
+Unordered_Map shares the same relationship with Map as unordered_set shared with set. So,
+similarly the only difference lies in the run-time complexity and it is because map keeps
+key-value pairs in sorted order, while the unordered_map keeps the key-value pair in any order.
+The commonly used methods are:
+1. insert()
+The run time of this method is O(1), insertion in map is done using make_pair
+2. find()
+The run time of this method is O(1), it returns pair of key and value to us.
+3. size()
+The run time of this method is O(1)
+4. [] bracket operators
+The run time of this method is O(1), if the key exists, then it returns reference to the
+value. If the key doesn’t exist, then it will do an insertion in the map
+unordered_map<int, int> m; // m = {}
+cout<< m.size() << endl; // outputs 0
+m.insert(make_pair(20, 1)); // m = {(20, 1)}
+m.insert(make_pair(10,1)); // m = {(10, 1), (20, 1)} (this
+could be in any order)
+m[10]++; // m = {(10, 2), (20, 1)} (this
+could be in any order)
+auto it = m.find(10); // it is an iterator that points to
+(10, 2)
+cout << (it != m.end() ? it -> second: 0)) << endl;// outputs 2
+auto it2 = m.find(20); // it is an iterator that points to
+(20, 1)
+cout << (it2 != m.end() ? it2 -> first: 0)) << endl;//outputs 20
+cout<< m.size() << endl; //outputs 
+
+Language tools for python 
+
+For quick reference, you can refer this curated list of ready-to-use data structures and methods.
+List
+A list is a collection which is ordered and changeable. In Python lists are written
+with square brackets.
+list = ["Apple", "Banana", "Cherry"]
+1. You access the list items by referring to the index number:
+print(list[1]) // Start with 0
+th index so Output is Banana
+2. To change the value of a specific item, refer to the index number:
+list[1] = "Orange"
+3. You can loop through the list items by using a for loop:
+for x in list:
+print(x) // Output is Apple , Orange , Cherry
+4. To determine if a specified item is present in a list use the in keyword:
+if "Apple" in list:
+print (“Yes”) // Yes if Apple is present in list
+else:
+print(“No”) // No if it is not Present
+5. To determine how many items a list have, use the len() method:
+print(len(list)) // Output is 3 as contains 3 elements
+6. To add an item to the end of the list, use the append() method:
+list.append("Mango") // Append at the end of list
+7. To add an item at the specified index, use the insert() method:
+list.insert(1, "Mango") // insert at index 1 of list
+8. The remove() method removes the specified item:
+list.remove("Banana") // Remove the element Banana if present
+2
+9. The pop() method removes the specified index, (or the last item if index
+is not specified)
+list.pop()
+10.The del keyword removes the specified index:
+del list[0] // removes the specified index
+Tuple
+A tuple is a collection which is ordered and unchangeable. In Python tuples are
+written with round brackets.
+tuple = ("Apple", "Banana", "Cherry")
+1. You can access tuple items by referring to the index number, inside
+square brackets:
+print(tuple[1]) // Output is Banana the specified index
+2. Once a tuple is created, you cannot change its values. Tuples
+are unchangeable.
+tuple[1] = "Orange" // Gives error the value remain unchanged
+3. You can loop through the tuple items by using a for loop.
+for x in tuple:
+print(x) // Generate all element present in tuple
+4. To determine if a specified item is present in a tuple use the in keyword:
+if "Apple" in tuple:
+print("Yes") // Output is Yes if Apple is present in tuple
+5. To determine how many items a list have, use the len() method:
+print(len(tuple)) // Output is 3 as 3 element are in tuple
+6. Tuples are unchangeable, so you cannot add or remove items from it,
+but you can delete the tuple completely:
+7. Python has two built-in methods that you can use on tuples.
+count() Returns the number of times a specified value occurs in a tuple
+3
+index() Searches the tuple for a specified value and returns the position
+of where it was found
+Set
+A set is a collection which is unordered and unindexed. In Python sets are
+written with curly brackets.
+set = {"apple", "banana", "cherry"}
+1. You cannot access items in a set by referring to an index, since sets are
+unordered the items has no index. But you can loop through the set
+items using a for loop, or ask if a specified value is present in a set, by
+using the in keyword.
+for x in set:
+ print(x) // Output contains all element present in set
+2. Once a set is created, you cannot change its items, but you can add new
+items.
+To add one item to a set use the add() method.
+set.add("Orange") // Add one element at end
+To add more than one item to a set use the update() method.
+set.update(["Orange", "Mango", "Grapes"]) // Add all
+// element in the end
+3. To determine how many items a set have, use the len() method.
+print(len(set)) // output is length of set
+4. To remove an item in a set, use the remove(), or the discard() method.
+set.remove("Banana") //Remove element if present else raise error
+set.discard("Banana") // Remove element if present else don’t
+// raise error
+4
+5. Remove last element by using pop() method:
+x = set.pop() //Remove and Return last element from the set
+print(x) // print the last element of set
+Dictionary
+A dictionary is a collection which is unordered, changeable and indexed. In
+Python dictionaries are written with curly brackets, and they have keys and
+values.
+dict = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+1. You can access the items of a dictionary by referring to its key name,
+inside square brackets:
+x = dict["model"] // Return the value of the key
+2. You can change the value of a specific item by referring to its key name:
+dict["year"] = 2018
+3. You can loop through a dictionary by using a for loop. When looping
+through a dictionary, the return value are the keys of the dictionary, but
+there are methods to return the values as well.
+for x in dict:
+ print(x) // Print all key names in the dictionary
+for x in dict:
+ print(dict[x]) // Print all values of the dictionary
+for x, y in dict.items():
+print(x, y) // Print both keys and value of the dictionary
+4. Adding an item to the dictionary is done by using a new index key and
+assigning a value to it:
+5
+dict["color"] = "red"
+print(dict) // Add new key and value to dictionary
+5. The pop() method removes the item with specified key name:
+dict.pop("model") // Removes model key/value pair in dictionar
